@@ -11,6 +11,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    
     </head>
 
     <style>
@@ -30,18 +35,30 @@
                             <li class="text-lg"><a href="#home">Home</a></li>
                             <li class="text-lg ml-8"><a href="#features">Features</a></li>
                             <li class="text-lg ml-8"><a href="#contactus">Contact Us</a></li>
-                            <li class="text-lg ml-8"><a href="">Privacy Policy</a></li>
+                            <li class="text-lg ml-8"><a href="https://theindependentserver.com/privacypolicy.html">Privacy Policy</a></li>
                         </ul>
                     </div>
+                    
                     <div class="flex items-center space-x-4 font-poppins">
                         <a class="px-8 py-2 bg-is1 text-white rounded-sm" href="">Download App</a>
-                        <a class="px-8 py-2 border-2 border-is1 text-is1 rounded-sm flex items-center" href="">Sign in
-                            <span class="ml-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
-                                </svg>
-                            </span>
-                        </a>
+                        <div x-data="{ open: false }" class="relative">
+                            <!-- Sign in Button -->
+                            <a @click="open = !open" class="px-8 py-2 border-2 border-is1 text-is1 rounded-sm flex items-center cursor-pointer">
+                                Sign in
+                                <span class="ml-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+                                    </svg>
+                                </span>
+                            </a>
+                        
+                            <!-- Dropdown Menu -->
+                            <div x-show="open" x-transition @click.away="open = false" class="z-30 w-full absolute mt-2 bg-white border border-gray-200 shadow-lg transition ease-in-out duration-500">
+                                <a href="https://theindependentserver.com/agencies/" class="flex pl-2 py-2 text-gray-700 hover:bg-gray-100">Agency</a>
+                                <a href="https://theindependentserver.com/users/" class="flex pl-2 py-2 text-gray-700 hover:bg-gray-100">Process Server</a>
+                                <a href="https://theindependentserver.com/notaries/" class="flex pl-2 py-2 text-gray-700 hover:bg-gray-100">Notary</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -176,7 +193,7 @@
                     </div>
                 </div>
             </section>
-            <section class="relative w-full h-200 bg-red-400 flex items-center px-24" id="contactus" style="clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);">
+            <section class="relative w-full h-200 bg-red-400 flex items-center px-24 overflow-hidden" id="contactus" style="clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);">
                 <div class="absolute z-10 -bottom-48 left-32">
                     <img src="./public/img/logo/Untitled_design__2_-removebg-preview.png" alt="The Independent Server Logo" class="w-180 opacity-15 ">
                 </div>
@@ -251,7 +268,24 @@
                     </form>
                 </div>
             </section>
-            <section class="bg-white h-100"></section>
+            <footer class="bg-white">
+                <div class="flex justify-between items-center mx-24 py-8">
+                    <div class="flex items-center">
+                        <span class="w-16">
+                            <img src="./public/img/logo/independentserver_logo (1).png" alt="Independent Server Logo" class="w-full h-full">
+                        </span>
+                        <ul class="flex items-center ml-8 font-poppins text-lg">
+                            <li class="text-lg"><a href="#home">Home</a></li>
+                            <li class="text-lg ml-8"><a href="#features">Features</a></li>
+                            <li class="text-lg ml-8"><a href="#contactus">Contact Us</a></li>
+                            <li class="text-lg ml-8"><a href="https://theindependentserver.com/privacypolicy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center space-x-4 font-poppins text-sm">
+                        <p>© Copyright <span class="text-is1 font-medium">The Independent Server Process Servers.</span> All rights reserved. Powered by Zhyck Atienza</p>
+                    </div>
+                </div>
+            </footer>
         </main>
         <script>
             window.addEventListener("load", () => {
