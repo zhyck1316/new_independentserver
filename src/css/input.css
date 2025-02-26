@@ -16,4 +16,9 @@
     /* ! ------FONT SIZE------ */
     --text-10xl: 8rem;
     --text-11xl: 12rem;
+
+    /* ! ------ MEDIA BREAKPOINTS ------- */
+    --breakpoint-2xs: 18rem;
+    --breakpoint-xs: 20rem;
+
   }
